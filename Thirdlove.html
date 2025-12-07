@@ -1,0 +1,198 @@
+<html>
+	<head>
+		<title>Thirdpage</title>
+	</head>
+	
+	<body bgcolor="mistyrose">
+	<div id="content">
+		<p>
+			<header style="background-color:black;width:100%;padding:20px 0;text-align:center;color:beige;box-shadow 4px 8px rgba(0,0,0,0,1);">
+				<a href="FirstPage.html" style="display: inline-block; padding: 10px 20px; background-color: tan; color: black; text-decoration: none; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Homepage</a>
+				<a href="Second home.html" style="display: inline-block; padding: 10px 20px; background-color: tan; color: black; text-decoration: none; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Second page</a>
+			</header>
+		</p>
+		<p>
+		
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Search & Navigate Results</title>
+			<style>
+				.highlight {
+					background-color: yellow;
+				}
+				.controls {
+					margin-top: 10px;
+				}
+			</style>
+		</head>
+		<body>
+			<font face="Georgia" color="tan"><h2>Search Within This Page</h2></font>
+			<input type="text" id="searchBox" placeholder="Enter keyword">
+			<button onclick="searchText()">Search</button>
+    
+
+		<div class="controls">
+			<button onclick="navigate(1)">Next</button>
+		</div>
+
+		<script>
+			let currentIndex = -1;
+			let highlightedElements = [];
+
+			function searchText() {
+				let input = document.getElementById('searchBox').value.trim();
+				let content = document.getElementById('content');
+				let regex = new RegExp(input, 'gi');
+
+				// Reset previous highlights
+				content.innerHTML = content.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, '$1');
+
+				if (input.length === 0) return;
+
+				highlightedElements = [];
+				content.innerHTML = content.innerHTML.replace(regex, (match) => {
+					let highlighted = `<span class="highlight">${match}</span>`;
+					highlightedElements.push(highlighted);
+					return highlighted;
+			});
+
+				// Refresh highlight elements
+				highlightedElements = document.querySelectorAll(".highlight");
+				if (highlightedElements.length > 0) {
+                currentIndex = 0;
+                navigate(0); // Go to first occurrence
+				}
+			}
+
+			function clearHighlights() {
+				let content = document.getElementById('content');
+				content.innerHTML = content.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, '$1');
+				highlightedElements = [];
+				currentIndex = -1;
+			}
+
+			function navigate(direction) {
+				if (highlightedElements.length === 0) return;
+	
+				currentIndex += direction;
+	
+				if (currentIndex < 0) currentIndex = highlightedElements.length - 1;
+				if (currentIndex >= highlightedElements.length) currentIndex = 0;
+	
+				highlightedElements[currentIndex].scrollIntoView({ behavior: "smooth", block: "center" });
+			}
+		</script>
+		</html>
+		</p>
+		<p>
+			<font color="tan" face="Georgia"><h1 align="center">Conclusion</h1></font>
+				<hr width="80%" size="2" color="tan"/>
+					From the two reports in the <a href="Database.accdb">database</a>,it can be seen that one speaks of how people would prefer to use smart accessories as well as why they would be effective or ineffective.<br/>
+					<ol>
+						<u><li>In terms of their usage most people preferred for smart accessories to be used for</u>:</li>
+								<ul>
+									<li>Communication</li>
+										<ul type="square">
+											<li>To receive calls, texts, email and notifications directly on their accessories</li>
+											<li>As well as to allow voice commands and even standalone calling or messaging</li>
+										</ul>
+									<li>Safety & Security</li>
+										<ul type="square">
+											<li>For emergency SOS functions or fall detection</li>
+											<li>As well as location tracking for kids, the elderly, or pets</li>
+										</ul>
+								</ul><br/>
+								This goes in hand with how the people chose that smart accessories in general tend to be effective as they offer a variety of useful information that can keep us as well as our data safe and allow us to communicate with our loved ones.
+								<br/>
+								In the second report, the threats of smart accessories can be seen as well as their solutions in order for them to truly be effective in the everyday lives of people.
+								<br/><br/>
+						<u><li>Common threats that smart accessories impose are</u>:</li>
+								<ul>
+									<li>Invasion of privacy/privacy risks</li>
+									<li>Maintenance of updates</li>
+									<li>Cyberbullying/Lack of privacy</li>
+								</ul><br/>
+							These coincide with the common solutions that were offered by people which included:
+								<ul>
+									<li>Prioritising data privacy & security</li>
+										<ul>
+											<b><li>Solution</b>: Encrypt data, provide clear privacy settings, and limit third-party access</li>
+													<ul type="disc">
+														<b><li>Impact</b>:Builds user trust, especially when handling sensitive health, location data or protecting victims of cyberbullying.</li>
+													</ul>
+										</ul>
+									<li>Increasing accessibility</li>
+										<ul>
+											<b><li>Solution</b>:Design with inclusive features—voice commands, larger interfaces, and haptic feedback.</li>
+													<ul type="disc">
+														<b><li>Impact</b>:Makes smart accessories usable for people with disabilities or different age groups</li>
+													</ul>
+										</ul>
+									<li>Regular updates and maintenance</li>
+										<ul>
+											<b><li>Solution</b>:Provide consistent software and firmware updates to fix bugs, enhance security, and introduce new features.</li>
+													<ul type="disc">
+														<b><li>Impact</b>:Keeps the accessory functional, secure, and relevant over time, reducing the need for frequent replacements and improving long-term user satisfaction.</li>
+													</ul>
+										</ul>
+								</ul>
+								
+					</ol>
+			<font color="tan" face="Georgia"><h1 align="center">Bibliography</h1></font>
+				<hr width="80%" size="2" color="tan"/>
+				<ul>
+					<li><a href="https://www.techtarget.com/searchmobilecomputing/definition/wearable-technology#:~:text=Wearable%20technology%20is%20any%20kind,clothing%20or%20elements%20of%20clothing.">What is the definition of a smart accessory?</a></li>
+					<li><a href="https://www.youtube.com/watch?v=4kRaO8bB-so">What are some common examples of smart accessories?</a></li>
+					<li><a href="file:///F:/CAT/PAT%20(gr12)/Rachidi%20Nesh%2012F%20PAT/Phase%202/Task%202/Questionnaires(Completed)/Scanned%20Questionnaires.pdf">What kind of threats, conflicts or challenges do you think smart technologies can impose on your personal life?</a></li>
+				</ul>
+			
+			
+		<meta charset="UTF-8">
+		<title>Framed Website</title>
+		<style>
+    iframe {
+      border: 2px solid #444;
+      width: 100%;
+      height: 400px;
+    }
+		</style>
+		</head>
+		<body>
+	<font face="Georgia" color="tan"><u color="tan"><h2>Quick Overview</h2></u></font>
+  
+		<iframe src="FirstPage.html" title="Menu Section" width="280" height="157"></iframe>
+
+		</body>
+
+			<font color="tan" face="Georgia"><h1 align="center">Acknowledgements</h1></font>
+				<hr width="80%" size="2" color="tan"/>
+				
+				Gif of working father from 'The Incredibles' was retrieved from:
+					<ul>
+						<li><a href="https://giphy.com/embed/13rQ7rrTrvZXlm">Gif of working father from 'The Incredibles'</a></li>
+					</ul>
+		</p>
+		
+		<p>
+			<a href="FirstPage.html" style="display: inline-block; padding: 10px 20px; background-color: tan; color: black; text-decoration: none; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Homepage</a>
+			<a href="Second home.html" style="display: inline-block; padding: 10px 20px; background-color: tan; color: black; text-decoration: none; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Second page</a>
+		</p>
+		<p>
+			Did you find this helpful?	
+				<input type="checkbox">Yes</input>	<input type="checkbox">No</input>
+		</p>
+		<p>
+			<iframe src="https://giphy.com/embed/13rQ7rrTrvZXlm" width="280" height="157" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+		</p>
+		<p>
+		 <footer style="background-color:black;width:100%;padding:20px 0;text-align:center;color:beige;box-shadow 4px 8px rgba(0,0,0,0,1);">
+			<h3>&copy; Copyright Reserved.</h3>
+			<p>Coder and Designer <br/> nesh3.co </p>
+		 </footer>
+		</p>
+	</div>
+	</body>
+
+</html>
